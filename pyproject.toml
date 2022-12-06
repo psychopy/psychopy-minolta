@@ -24,8 +24,10 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
-urls.homepage = "https://github.com/mdcutone/psychopy-minolta"
-urls.changelog = "https://github.com/mdcutone/psychopy-minolta/blob/main/CHANGELOG.txt"
+urls.homepage = "https://github.com/psychopy/psychopy-minolta"
+urls.changelog = "https://github.com/psychopy/psychopy-minolta/blob/main/CHANGELOG.txt"
+urls.documentation = "https://pages.github.com/psychopy/psychopy-minolta"
+urls.repository = "https://github.com/psychopy/psychopy-minolta"
 dependencies = [
   "pyserial",
 ]
