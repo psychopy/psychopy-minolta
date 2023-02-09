@@ -12,7 +12,7 @@ Support for using Minolta photometers.
    :maxdepth: 2
    :caption: Library Components (API):
 
-   psychopy_minolta
+   minolta
 
 Indices and tables
 ==================

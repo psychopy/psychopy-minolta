@@ -152,4 +152,3 @@ def createComponentDocs(cls, params=None):
             ) % param.__dict__
 
     return content
-

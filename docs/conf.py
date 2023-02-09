@@ -17,10 +17,10 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'psychopy-minolta'
-copyright = '2022, Konica Minolta'
-author = 'Konica Minolta'
-repo = 'https://github.com/TEParsons/psychopy-minolta'
+project = 'psychopy-template'
+copyright = '2022, Open Science Tools'
+author = 'Open Science Tools'
+repo = 'https://github.com/psychopy/psychopy-minolta'
 
 
 # -- General configuration ---------------------------------------------------
