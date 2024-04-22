@@ -32,5 +32,22 @@ dependencies = [
   "pyserial",
 ]
 
+[project.optional-dependencies]
+# dependencies for building the docs
+docs = [
+  "psychopy",
+  "sphinx",
+  "furo",
+]
+# dependencies for running the test suite
+tests = [
+  "psychopy @ git+https://github.com/psychopy/psychopy@release",
+  "pytest",
+]
+
+[project.entry-points."psychopy.hardware.minolta"]
+LS100 = "psychopy_minolta.minolta:LS100"
+CS100A = "psychopy_minolta.minolta:CS100A"
+
 [tool.setuptools.packages.find]
 where = ["",]

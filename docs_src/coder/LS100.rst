@@ -1,0 +1,16 @@
+===============================
+LS100
+===============================
+
+To import LS100, you can either use::
+
+    from psychopy_minolta.minolta import LS100
+
+or, any time after `psychopy.plugins.activatePlugins` has been called::
+
+    from psychopy.hardware.minolta import LS100
+
+.. autoclass:: psychopy_minolta.minolta.LS100
+    :members:
+    :undoc-members:
+    :inherited-members:
