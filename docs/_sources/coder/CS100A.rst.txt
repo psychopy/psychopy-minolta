@@ -1,0 +1,16 @@
+===============================
+CS100A
+===============================
+
+To import CS100A, you can either use::
+
+    from psychopy_minolta.minolta import CS100A
+
+or, any time after `psychopy.plugins.activatePlugins` has been called::
+
+    from psychopy.hardware.minolta import CS100A
+
+.. autoclass:: psychopy_minolta.minolta.CS100A
+    :members:
+    :undoc-members:
+    :inherited-members:
