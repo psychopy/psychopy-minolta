@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CS100A &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="LS100" href="../LS100/" />
+    <link rel="prev" title="Welcome to psychopy-minolta’s documentation!" href="../../" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand small-logo" href="../../">
+          <img src="../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+        </a>
+        <a class="navbar-brand large-logo" href="../../">
+          <img src="../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+        </a>
+        <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+          <ul class="nav navbar-nav ml-auto">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../download/">Install</a></li>
+            
+            <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+            
+              <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CS100A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LS100/">LS100</a></li>
+</ul>
+</ul>
+</li> -->
+              
+            
+            <!--  -->
+            
+            
+          </ul>
+
+            <!-- 
+              
+<form class="navbar-form navbar-right" action="../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+             -->
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <section id="cs100a">
+<h1>CS100A<a class="headerlink" href="#cs100a" title="Link to this heading">¶</a></h1>
+<p>To import CS100A, you can either use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy_minolta.minolta</span><span class="w"> </span><span class="kn">import</span> <span class="n">CS100A</span>
+</pre></div>
+</div>
+<p>or, any time after <cite>psychopy.plugins.activatePlugins</cite> has been called:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy.hardware.minolta</span><span class="w"> </span><span class="kn">import</span> <span class="n">CS100A</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psychopy_minolta.minolta.</span></span><span class="sig-name descname"><span class="pre">CS100A</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxAttempts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A" title="Link to this definition">¶</a></dt>
+<dd><p>A class to define a Minolta CS100A photometer</p>
+<p>You need to connect a CS100A to the serial (RS232) port and
+<strong>when you turn it on press the F key</strong> on the device. This will put
+it into the correct mode to communicate with the serial port.</p>
+<p>usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy.hardware</span><span class="w"> </span><span class="kn">import</span> <span class="n">minolta</span>
+<span class="n">phot</span> <span class="o">=</span> <span class="n">minolta</span><span class="o">.</span><span class="n">CS100A</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">phot</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>  <span class="c1"># then we successfully made a connection</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">phot</span><span class="o">.</span><span class="n">getLum</span><span class="p">())</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p>port: string</p>
+<blockquote>
+<div><p>the serial port that should be checked</p>
+</div></blockquote>
+<dl class="simple">
+<dt>maxAttempts: int</dt><dd><p>If the device doesn’t respond first time how many attempts
+should be made? If you’re certain that this is the correct
+port and the device is on and correctly configured then this
+could be set high. If not then set this low.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Troubleshooting<span class="colon">:</span></dt>
+<dd class="field-even"><p>Various messages are printed to the log regarding the function
+of this device, but to see them you need to set the printing of
+the log to the correct level:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>  <span class="c1"># error messages only</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>  <span class="c1"># more info</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>  <span class="c1"># log all communications</span>
+</pre></div>
+</div>
+<p>If you’re using a keyspan adapter (at least on macOS) be aware that
+it needs a driver installed. Otherwise no ports will be found.</p>
+<p>Error messages:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">Couldn't</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">Minolta</span> <span class="pre">CS100A</span> <span class="pre">on</span> <span class="pre">____</span></code>:</dt><dd><p>This likely means that the device is not connected to that port
+(although the port has been found and opened). Check that the
+device has the <cite>[</cite> in the bottom right of the display;
+if not turn off and on again holding the <cite>F</cite> key.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">No</span> <span class="pre">reply</span> <span class="pre">from</span> <span class="pre">CS100A</span></code>:</dt><dd><p>The port was found, the connection was made and an initial
+command worked, but then the device stopped communating. If the
+first measurement taken with the device after connecting does
+not yield a reasonable intensity the device can sulk (not a
+technical term!). The “[” on the display will disappear and you
+can no longer communicate with the device. Turn it off and on
+again (with F depressed) and use a reasonably bright screen for
+your first measurement. Subsequent measurements can be dark
+(or we really would be in trouble!!).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.checkOK">
+<span class="sig-name descname"><span class="pre">checkOK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.checkOK"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.checkOK" title="Link to this definition">¶</a></dt>
+<dd><p>Check that the message from the photometer is OK.
+If there’s an error show it (printed).</p>
+<p>Then return True (OK) or False.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.clearMemory">
+<span class="sig-name descname"><span class="pre">clearMemory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.clearMemory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.clearMemory" title="Link to this definition">¶</a></dt>
+<dd><p>Clear the memory of the device from previous measurements</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.driverFor">
+<span class="sig-name descname"><span class="pre">driverFor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['cs100a']</span></em><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.driverFor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.getLum">
+<span class="sig-name descname"><span class="pre">getLum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.getLum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.getLum" title="Link to this definition">¶</a></dt>
+<dd><p>Makes a measurement and returns the luminance value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.get_xyY">
+<span class="sig-name descname"><span class="pre">get_xyY</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.get_xyY"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.get_xyY" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.longName">
+<span class="sig-name descname"><span class="pre">longName</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Minolta</span> <span class="pre">CS100A'</span></em><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.longName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.measure">
+<span class="sig-name descname"><span class="pre">measure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.measure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.measure" title="Link to this definition">¶</a></dt>
+<dd><p>Measure the current luminance and set .lastLum to this value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.sendMessage">
+<span class="sig-name descname"><span class="pre">sendMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.sendMessage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.sendMessage" title="Link to this definition">¶</a></dt>
+<dd><p>Send a command to the photometer and wait an allotted
+timeout for a response.</p>
+<p>The message can be in either bytes or unicode but the returned string
+will always be utf-encoded.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.setMaxAttempts">
+<span class="sig-name descname"><span class="pre">setMaxAttempts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxAttempts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.setMaxAttempts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.setMaxAttempts" title="Link to this definition">¶</a></dt>
+<dd><p>Changes the number of attempts to send a message and read the
+output. Typically this should be low initially, if you aren’t sure
+that the device is setup correctly but then, after the first
+successful reading, set it higher.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_minolta.minolta.CS100A.setMode">
+<span class="sig-name descname"><span class="pre">setMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'04'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_minolta/minolta/#CS100A.setMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_minolta.minolta.CS100A.setMode" title="Link to this definition">¶</a></dt>
+<dd><p>Set the mode for measurements. Returns True (success) or False</p>
+<p>‘04’ means absolute measurements.
+‘08’ = peak
+‘09’ = cont</p>
+<p>See user manual for other modes</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+<div id="sourcelink">
+  <a href="https://github.com/psychopy/psychopy/blob/master/docs/source/coder/CS100A.rst"
+     rel="nofollow">Source</a>
+</div>
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.1.3.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>psychopy_minolta.minolta &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand small-logo" href="../../../">
+          <img src="../../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+        </a>
+        <a class="navbar-brand large-logo" href="../../../">
+          <img src="../../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+        </a>
+        <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+          <ul class="nav navbar-nav ml-auto">
+            <li><a href="../../../">Home</a></li>
+            <li><a href="../../../download/">Install</a></li>
+            
+            <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+            
+              <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/CS100A/">CS100A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/LS100/">LS100</a></li>
+</ul>
+</ul>
+</li> -->
+              
+            
+            <!--  -->
+            
+            
+          </ul>
+
+            <!-- 
+              
+<form class="navbar-form navbar-right" action="../../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+             -->
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <h1>Source code for psychopy_minolta.minolta</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># Part of the PsychoPy library</span>
+<span class="c1"># Copyright (C) 2002-2018 Jonathan Peirce (C) 2019-2022 Open Science Tools Ltd.</span>
+<span class="c1"># Distributed under the terms of the GNU General Public License (GPL).</span>
+
+<span class="sd">&quot;&quot;&quot;Minolta light-measuring devices</span>
+<span class="sd">See http://www.konicaminolta.com/instruments</span>
+
+<span class="sd">----------</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">psychopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">serial</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">serial</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<div class="viewcode-block" id="CS100A">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CS100A</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class to define a Minolta CS100A photometer</span>
+
+<span class="sd">    You need to connect a CS100A to the serial (RS232) port and</span>
+<span class="sd">    **when you turn it on press the F key** on the device. This will put</span>
+<span class="sd">    it into the correct mode to communicate with the serial port.</span>
+
+<span class="sd">    usage::</span>
+
+<span class="sd">        from psychopy.hardware import minolta</span>
+<span class="sd">        phot = minolta.CS100A(port)</span>
+<span class="sd">        if phot.OK:  # then we successfully made a connection</span>
+<span class="sd">            print(phot.getLum())</span>
+
+<span class="sd">    :parameters:</span>
+
+<span class="sd">        port: string</span>
+
+<span class="sd">            the serial port that should be checked</span>
+
+<span class="sd">        maxAttempts: int</span>
+<span class="sd">            If the device doesn&#39;t respond first time how many attempts</span>
+<span class="sd">            should be made? If you&#39;re certain that this is the correct</span>
+<span class="sd">            port and the device is on and correctly configured then this</span>
+<span class="sd">            could be set high. If not then set this low.</span>
+
+<span class="sd">    :troubleshooting:</span>
+
+<span class="sd">        Various messages are printed to the log regarding the function</span>
+<span class="sd">        of this device, but to see them you need to set the printing of</span>
+<span class="sd">        the log to the correct level::</span>
+
+<span class="sd">            from psychopy import logging</span>
+<span class="sd">            logging.console.setLevel(logging.ERROR)  # error messages only</span>
+<span class="sd">            logging.console.setLevel(logging.INFO)  # more info</span>
+<span class="sd">            logging.console.setLevel(logging.DEBUG)  # log all communications</span>
+
+<span class="sd">        If you&#39;re using a keyspan adapter (at least on macOS) be aware that</span>
+<span class="sd">        it needs a driver installed. Otherwise no ports will be found.</span>
+
+<span class="sd">        Error messages:</span>
+
+<span class="sd">        ``ERROR: Couldn&#39;t connect to Minolta CS100A on ____``:</span>
+<span class="sd">            This likely means that the device is not connected to that port</span>
+<span class="sd">            (although the port has been found and opened). Check that the</span>
+<span class="sd">            device has the `[` in the bottom right of the display;</span>
+<span class="sd">            if not turn off and on again holding the `F` key.</span>
+
+<span class="sd">        ``ERROR: No reply from CS100A``:</span>
+<span class="sd">            The port was found, the connection was made and an initial</span>
+<span class="sd">            command worked, but then the device stopped communating. If the</span>
+<span class="sd">            first measurement taken with the device after connecting does</span>
+<span class="sd">            not yield a reasonable intensity the device can sulk (not a</span>
+<span class="sd">            technical term!). The &quot;[&quot; on the display will disappear and you</span>
+<span class="sd">            can no longer communicate with the device. Turn it off and on</span>
+<span class="sd">            again (with F depressed) and use a reasonably bright screen for</span>
+<span class="sd">            your first measurement. Subsequent measurements can be dark</span>
+<span class="sd">            (or we really would be in trouble!!).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">longName</span> <span class="o">=</span> <span class="s2">&quot;Minolta CS100A&quot;</span>
+    <span class="n">driverFor</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cs100a&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">maxAttempts</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">CS100A</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">serial</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;The module serial is needed to connect to &quot;</span>
+                              <span class="s2">&quot;photometers. On most systems this can be &quot;</span>
+                              <span class="s2">&quot;installed with</span><span class="se">\n\t</span><span class="s2"> easy_install pyserial&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+            <span class="c1"># add one so that port 1=COM1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="s1">&#39;COM</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">isOpen</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastQual</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastCode</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastXColor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastYColor</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastXY</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s1">&#39;CS100A&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># until we fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span> <span class="o">=</span> <span class="n">maxAttempts</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">codes</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;ER00</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Unknown command&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER01</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Setting error&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER11</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Memory value error&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER10</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Measuring range over&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER19</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Display range over&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER20</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;EEPROM error (the photometer needs repair)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER30</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Photometer battery exhausted&#39;</span><span class="p">,</span> <span class="p">}</span>
+
+        <span class="c1"># try to open the port</span>
+        <span class="n">_linux</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;linux&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;darwin&#39;</span><span class="p">,</span> <span class="s1">&#39;win32&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_linux</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Couldn&#39;t connect to port </span><span class="si">%s</span><span class="s2">. Is it being used by &quot;</span>
+                       <span class="s2">&quot;another program?&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;I don&#39;t know how to handle serial ports on </span><span class="si">%s</span><span class="s2">&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
+        <span class="c1"># setup the params for comms</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># not sure why this helps but on win32 it does!!</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">bytesize</span> <span class="o">=</span> <span class="mi">7</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">baudrate</span> <span class="o">=</span> <span class="mi">4800</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">parity</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">PARITY_EVEN</span>  <span class="c1"># none</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">stopbits</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">STOPBITS_TWO</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">isOpen</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Opened serial port </span><span class="si">%s</span><span class="s2">, but couldn&#39;t connect to CS100A&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">isOpen</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>  <span class="c1"># we have an open com port. try to send a command</span>
+            <span class="k">for</span> <span class="n">repN</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span><span class="p">):</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+                    <span class="c1"># set to use absolute measurements</span>
+                    <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;MDS,04&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;OK&#39;</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="k">break</span>
+                    <span class="k">elif</span> <span class="n">reply</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="k">break</span>  <span class="c1"># wasn&#39;t valid</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># false so far but keep trying</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>  <span class="c1"># we have successfully sent and read a command</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Successfully opened </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CS100A.setMode">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.setMode">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setMode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;04&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the mode for measurements. Returns True (success) or False</span>
+
+<span class="sd">        &#39;04&#39; means absolute measurements.</span>
+<span class="sd">        &#39;08&#39; = peak</span>
+<span class="sd">        &#39;09&#39; = cont</span>
+
+<span class="sd">        See user manual for other modes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;MDS,</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkOK</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CS100A.measure">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.measure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">measure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Measure the current luminance and set .lastLum to this value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;MES&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkOK</span><span class="p">(</span><span class="n">reply</span><span class="p">):</span>
+            <span class="c1">#lum = float(reply.split()[-1])</span>
+            <span class="c1"># Parse args returned by photometer</span>
+            <span class="n">parsed</span> <span class="o">=</span> <span class="n">reply</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="n">parsed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#status code string (e.g., &#39;OK00&#39;)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lastCode</span> <span class="o">=</span> <span class="n">code</span>
+            <span class="n">lum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">parsed</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span> <span class="o">=</span> <span class="n">lum</span>
+            <span class="c1">#extract chromaticity data if available</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parsed</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastXColor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">parsed</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1">#x coordinate</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastYColor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">parsed</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1">#y coordinate</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastXY</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">parsed</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">parsed</span><span class="p">[</span><span class="mi">3</span><span class="p">])]</span>
+            <span class="k">return</span> <span class="n">lum</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="CS100A.getLum">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.getLum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Makes a measurement and returns the luminance value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="CS100A.get_xyY">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.get_xyY">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_xyY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">lum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lastXColor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastYColor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="CS100A.clearMemory">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.clearMemory">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clearMemory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clear the memory of the device from previous measurements</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;CLE&#39;</span><span class="p">)</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkOK</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ok</span></div>
+
+
+<div class="viewcode-block" id="CS100A.checkOK">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.checkOK">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">checkOK</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check that the message from the photometer is OK.</span>
+<span class="sd">        If there&#39;s an error show it (printed).</span>
+
+<span class="sd">        Then return True (OK) or False.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># also check that the reply is what was expected</span>
+        <span class="k">if</span> <span class="n">msg</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;OK&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">msg</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;No reply from CS100A&#39;</span><span class="p">)</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Error message from CS100A:&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="n">msg</span><span class="p">])</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="CS100A.sendMessage">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.sendMessage">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sendMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">5.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Send a command to the photometer and wait an allotted</span>
+<span class="sd">        timeout for a response.</span>
+
+<span class="sd">        The message can be in either bytes or unicode but the returned string</span>
+<span class="sd">        will always be utf-encoded.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># append a newline if necessary (for either str or bytes)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bytes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">!=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">+=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+
+        <span class="c1"># flush the read buffer first</span>
+        <span class="c1"># read as many chars as are in the buffer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">inWaiting</span><span class="p">())</span>
+        <span class="c1"># then send message and catch any returned chars</span>
+        <span class="k">for</span> <span class="n">attemptN</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span><span class="p">):</span>
+            <span class="c1"># send the message</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">bytes</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="c1"># get reply (within timeout limit)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+            <span class="c1"># send complete message</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Sent command:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">message</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]))</span>
+            <span class="n">retVal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">retVal</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>  <span class="c1"># we got a reply so can stop trying</span>
+
+        <span class="k">return</span> <span class="n">retVal</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="CS100A.setMaxAttempts">
+<a class="viewcode-back" href="../../../coder/CS100A/#psychopy_minolta.minolta.CS100A.setMaxAttempts">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setMaxAttempts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maxAttempts</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Changes the number of attempts to send a message and read the</span>
+<span class="sd">        output. Typically this should be low initially, if you aren&#39;t sure</span>
+<span class="sd">        that the device is setup correctly but then, after the first</span>
+<span class="sd">        successful reading, set it higher.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span> <span class="o">=</span> <span class="n">maxAttempts</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LS100">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LS100</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class to define a Minolta LS100 (or LS110?) photometer</span>
+
+<span class="sd">    You need to connect a LS100 to the serial (RS232) port and</span>
+<span class="sd">    **when you turn it on press the F key** on the device. This will put</span>
+<span class="sd">    it into the correct mode to communicate with the serial port.</span>
+
+<span class="sd">    usage::</span>
+
+<span class="sd">        from psychopy.hardware import minolta</span>
+<span class="sd">        phot = minolta.LS100(port)</span>
+<span class="sd">        if phot.OK:  # then we successfully made a connection</span>
+<span class="sd">            print(phot.getLum())</span>
+
+<span class="sd">    :parameters:</span>
+
+<span class="sd">        port: string</span>
+
+<span class="sd">            the serial port that should be checked</span>
+
+<span class="sd">        maxAttempts: int</span>
+<span class="sd">            If the device doesn&#39;t respond first time how many attempts</span>
+<span class="sd">            should be made? If you&#39;re certain that this is the correct</span>
+<span class="sd">            port and the device is on and correctly configured then this</span>
+<span class="sd">            could be set high. If not then set this low.</span>
+
+<span class="sd">    :troubleshooting:</span>
+
+<span class="sd">        Various messages are printed to the log regarding the function</span>
+<span class="sd">        of this device, but to see them you need to set the printing of</span>
+<span class="sd">        the log to the correct level::</span>
+
+<span class="sd">            from psychopy import logging</span>
+<span class="sd">            logging.console.setLevel(logging.ERROR)  # error messages only</span>
+<span class="sd">            logging.console.setLevel(logging.INFO)  # more info</span>
+<span class="sd">            logging.console.setLevel(logging.DEBUG)  # log all communications</span>
+
+<span class="sd">        If you&#39;re using a keyspan adapter (at least on macOS) be aware that</span>
+<span class="sd">        it needs a driver installed. Otherwise no ports will be found.</span>
+
+<span class="sd">        Error messages:</span>
+
+<span class="sd">        ``ERROR: Couldn&#39;t connect to Minolta LS100/110 on ____``:</span>
+<span class="sd">            This likely means that the device is not connected to that port</span>
+<span class="sd">            (although the port has been found and opened). Check that the</span>
+<span class="sd">            device has the `[` in the bottom right of the display;</span>
+<span class="sd">            if not turn off and on again holding the `F` key.</span>
+
+<span class="sd">        ``ERROR: No reply from LS100``:</span>
+<span class="sd">            The port was found, the connection was made and an initial</span>
+<span class="sd">            command worked, but then the device stopped communating. If the</span>
+<span class="sd">            first measurement taken with the device after connecting does</span>
+<span class="sd">            not yield a reasonable intensity the device can sulk (not a</span>
+<span class="sd">            technical term!). The &quot;[&quot; on the display will disappear and you</span>
+<span class="sd">            can no longer communicate with the device. Turn it off and on</span>
+<span class="sd">            again (with F depressed) and use a reasonably bright screen for</span>
+<span class="sd">            your first measurement. Subsequent measurements can be dark</span>
+<span class="sd">            (or we really would be in trouble!!).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">longName</span> <span class="o">=</span> <span class="s2">&quot;Minolta LS100/LS110&quot;</span>
+    <span class="n">driverFor</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ls110&quot;</span><span class="p">,</span> <span class="s2">&quot;ls100&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">maxAttempts</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LS100</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">serial</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;The module serial is needed to connect to &quot;</span>
+                              <span class="s2">&quot;photometers. On most systems this can be &quot;</span>
+                              <span class="s2">&quot;installed with</span><span class="se">\n\t</span><span class="s2"> easy_install pyserial&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+            <span class="c1"># add one so that port 1=COM1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="s1">&#39;COM</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">isOpen</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastQual</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s1">&#39;LS100&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># until we fail</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span> <span class="o">=</span> <span class="n">maxAttempts</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">codes</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;ER00</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Unknown command&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER01</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Setting error&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER11</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Memory value error&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER10</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Measuring range over&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER19</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Display range over&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER20</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;EEPROM error (the photometer needs repair)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ER30</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span> <span class="s1">&#39;Photometer battery exhausted&#39;</span><span class="p">,</span> <span class="p">}</span>
+
+        <span class="c1"># try to open the port</span>
+        <span class="n">_linux</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;linux&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;darwin&#39;</span><span class="p">,</span> <span class="s1">&#39;win32&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_linux</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Couldn&#39;t connect to port </span><span class="si">%s</span><span class="s2">. Is it being used by &quot;</span>
+                       <span class="s2">&quot;another program?&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;I don&#39;t know how to handle serial ports on </span><span class="si">%s</span><span class="s2">&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
+        <span class="c1"># setup the params for comms</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># not sure why this helps but on win32 it does!!</span>
+            <span class="c1"># this is a slightly odd characteristic of the Minolta LS100</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">bytesize</span> <span class="o">=</span> <span class="mi">7</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">baudrate</span> <span class="o">=</span> <span class="mi">4800</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">parity</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">PARITY_EVEN</span>  <span class="c1"># none</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">stopbits</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">STOPBITS_TWO</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">isOpen</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Opened serial port </span><span class="si">%s</span><span class="s2">, but couldn&#39;t connect to LS100&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">isOpen</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>  <span class="c1"># we have an open com port. try to send a command</span>
+            <span class="k">for</span> <span class="n">repN</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span><span class="p">):</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+                    <span class="c1"># set to use absolute measurements</span>
+                    <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;MDS,04&#39;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;OK&#39;</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="k">break</span>
+                    <span class="k">elif</span> <span class="n">reply</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="k">break</span>  <span class="c1"># wasn&#39;t valid</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># false so far but keep trying</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>  <span class="c1"># we have successfully sent and read a command</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Successfully opened </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LS100.setMode">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100.setMode">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setMode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;04&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the mode for measurements. Returns True (success) or False</span>
+
+<span class="sd">        &#39;04&#39; means absolute measurements.</span>
+<span class="sd">        &#39;08&#39; = peak</span>
+<span class="sd">        &#39;09&#39; = cont</span>
+
+<span class="sd">        See user manual for other modes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;MDS,</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkOK</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LS100.measure">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100.measure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">measure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Measure the current luminance and set .lastLum to this value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;MES&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkOK</span><span class="p">(</span><span class="n">reply</span><span class="p">):</span>
+            <span class="n">lum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">reply</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">lum</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="LS100.getLum">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100.getLum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Makes a measurement and returns the luminance value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">measure</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="LS100.clearMemory">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100.clearMemory">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clearMemory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clear the memory of the device from previous measurements</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;CLE&#39;</span><span class="p">)</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkOK</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ok</span></div>
+
+
+<div class="viewcode-block" id="LS100.checkOK">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100.checkOK">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">checkOK</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check that the message from the photometer is OK.</span>
+<span class="sd">        If there&#39;s an error show it (printed).</span>
+
+<span class="sd">        Then return True (OK) or False.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># also check that the reply is what was expected</span>
+        <span class="k">if</span> <span class="n">msg</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;OK&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">msg</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;No reply from LS100&#39;</span><span class="p">)</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Error message from LS100:&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="n">msg</span><span class="p">])</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="LS100.sendMessage">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100.sendMessage">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sendMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">5.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Send a command to the photometer and wait an allotted</span>
+<span class="sd">        timeout for a response.</span>
+
+<span class="sd">        The message can be in either bytes or unicode but the returned string</span>
+<span class="sd">        will always be utf-encoded.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># append a newline if necessary (for either str or bytes)</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bytes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">!=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">+=</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span>
+
+        <span class="c1"># flush the read buffer first</span>
+        <span class="c1"># read as many chars as are in the buffer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">inWaiting</span><span class="p">())</span>
+        <span class="c1"># then send message and catch any returned chars</span>
+        <span class="k">for</span> <span class="n">attemptN</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span><span class="p">):</span>
+            <span class="c1"># send the message</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">message</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">bytes</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="c1"># get reply (within timeout limit)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+            <span class="c1"># send complete message</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Sent command:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">message</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]))</span>
+            <span class="n">retVal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">retVal</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>  <span class="c1"># we got a reply so can stop trying</span>
+
+        <span class="k">return</span> <span class="n">retVal</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LS100.setMaxAttempts">
+<a class="viewcode-back" href="../../../coder/LS100/#psychopy_minolta.minolta.LS100.setMaxAttempts">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setMaxAttempts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maxAttempts</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Changes the number of attempts to send a message and read the</span>
+<span class="sd">        output. Typically this should be low initially, if you aren&#39;t sure</span>
+<span class="sd">        that the device is setup correctly but then, after the first</span>
+<span class="sd">        successful reading, set it higher.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxAttempts</span> <span class="o">=</span> <span class="n">maxAttempts</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.1.3.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>
